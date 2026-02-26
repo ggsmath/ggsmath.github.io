@@ -1,2 +1,2 @@
-# ggsmath.github.io
+# Guillermo Gamarra Segovia
 My math website.
