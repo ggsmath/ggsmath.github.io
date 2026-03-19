@@ -40,9 +40,9 @@ const button = document.querySelector("#random_button");
 
 function displayThing() {
   let randomCategory = Math.floor(Math.random() * 2)
-  let randomNumber = Math.floor(Math.random() * categoryArray[randomCategory].length());
+  let randomNumber = Math.floor(Math.random() * categoryArray[randomCategory].length);
   const nameThing = moviesArray[randomNumber].name;
-  const displayText = document.querySelector("#random_thing");
+  const displayText = document.querySelector("#liked_thing");
   displayText.textContent = `I really enjoyed ${nameThing}`;
   console.log(displayText);
 }
