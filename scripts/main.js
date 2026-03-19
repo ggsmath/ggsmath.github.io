@@ -32,13 +32,16 @@ const heardSome = {
 let moviesArray = [oneBattle];
 let gamesArray = [aceAttorney];
 let musicArray = [heardSome];
+let categoryArray = [moviesArray, gamesArray, musicArray];
 
 // Give the effect to the button
 
 const button = document.querySelector("#random_button");
 
 function displayThing() {
-  const nameThing = moviesArray[0].name;
+  let randomCategory = Math.floor(Math.random() * 2)
+  let randomNumber = Math.floor(Math.random() * categoryArray[randomCategory].length());
+  const nameThing = moviesArray[randomNumber].name;
   const displayText = document.querySelector("#random_thing");
   displayText.textContent = `I really enjoyed ${nameThing}`;
   console.log(displayText);
