@@ -39,10 +39,13 @@ let categoryArray = [moviesArray, gamesArray, musicArray];
 const button = document.querySelector("#random_button");
 
 function displayThing() {
-  let randomCategory = Math.floor(Math.random() * 2)
+  
+  let randomCategory = Math.floor(Math.random() * 3);
+  console.log(randomCategory);
   let randomNumber = Math.floor(Math.random() * categoryArray[randomCategory].length);
-  const nameThing = moviesArray[randomNumber].name;
-  const displayText = document.querySelector("#liked_thing");
+  console.log(randomNumber);
+  let nameThing = categoryArray[randomCategory][randomNumber].name;
+  let displayText = document.querySelector(".liked_thing");
   displayText.textContent = `I really enjoyed ${nameThing}`;
   console.log(displayText);
 }
