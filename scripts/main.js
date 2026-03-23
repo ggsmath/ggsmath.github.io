@@ -4,7 +4,7 @@
 
 const oneBattle = {
   name: "One Battle After Another",
-  group: "movies",
+  group: "movie",
   year: "2025",
   director: "Paul Thomas Anderson",
 };
@@ -12,8 +12,8 @@ const oneBattle = {
 // Games
 
 const aceAttorney = {
-  name: "Ace Attorney series",
-  group: "games",
+  name: "Ace Attorney",
+  group: "series of games",
   year: "2001 - Present",
 };
 
@@ -21,7 +21,7 @@ const aceAttorney = {
 
 const heardSome = {
   name: "Heard Somebody Cry",
-  group: "music",
+  group: "song",
   performer: "Oingo Boingo",
   year: "1985",
   album: "Dead Man's party",
@@ -34,20 +34,30 @@ let gamesArray = [aceAttorney];
 let musicArray = [heardSome];
 let categoryArray = [moviesArray, gamesArray, musicArray];
 
+// Declare the variables used to print the objects
+
+let randomCategory;
+let randomNumber;
+let nameThing;
+let categoryThing;
+let displayText;
+
 // Give the effect to the button
 
 const button = document.querySelector("#random_button");
 
 function displayThing() {
   
-  let randomCategory = Math.floor(Math.random() * 3);
-  console.log(randomCategory);
-  let randomNumber = Math.floor(Math.random() * categoryArray[randomCategory].length);
-  console.log(randomNumber);
-  let nameThing = categoryArray[randomCategory][randomNumber].name;
-  let displayText = document.querySelector(".liked_thing");
-  displayText.textContent = `I really enjoyed ${nameThing}`;
+  randomCategory = Math.floor(Math.random() * 3);
+  randomNumber = Math.floor(Math.random() * categoryArray[randomCategory].length);
+  nameThing = categoryArray[randomCategory][randomNumber].name;
+  categoryThing = categoryArray[randomCategory][randomNumber].group;
+  displayText = document.querySelector(".liked_thing");
+  displayText.textContent = `I really enjoyed the ${categoryThing} ${nameThing}.`;
   console.log(displayText);
+
 }
 
-button.addEventListener("click", displayThing());
+button.onclick = () => {
+  displayThing();
+}
